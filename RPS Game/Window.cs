@@ -53,6 +53,7 @@ namespace RPS_Game
             _ai.WeaponName = _ai.AIRandomize(out _ai.WeaponName);
             
             lblResult1.Text = _ai.WeaponName;
+            lblResult2.Text = _player.WeaponName;
         }
 
         private void btnPaper_Click(object sender, EventArgs e)
