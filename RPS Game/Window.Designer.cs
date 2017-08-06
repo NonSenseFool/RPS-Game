@@ -35,6 +35,8 @@
             this.btnScissors = new System.Windows.Forms.Button();
             this.lblResult1 = new System.Windows.Forms.Label();
             this.lblResult2 = new System.Windows.Forms.Label();
+            this.lblWins = new System.Windows.Forms.Label();
+            this.lblLosses = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -50,12 +52,13 @@
             // 
             // rtbLog
             // 
-            this.rtbLog.Location = new System.Drawing.Point(572, 12);
+            this.rtbLog.Location = new System.Drawing.Point(572, 65);
             this.rtbLog.Name = "rtbLog";
-            this.rtbLog.Size = new System.Drawing.Size(200, 537);
+            this.rtbLog.ReadOnly = true;
+            this.rtbLog.Size = new System.Drawing.Size(200, 484);
             this.rtbLog.TabIndex = 1;
             this.rtbLog.Text = "";
-            this.rtbLog.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            this.rtbLog.TextChanged += new System.EventHandler(this.rtbLog_TextChanged);
             // 
             // btnRock
             // 
@@ -97,7 +100,6 @@
             this.lblResult1.Name = "lblResult1";
             this.lblResult1.Size = new System.Drawing.Size(554, 50);
             this.lblResult1.TabIndex = 5;
-            this.lblResult1.Text = "Rock, Paper, Scissors! by NSFian";
             this.lblResult1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblResult1.Click += new System.EventHandler(this.lblTest_Click);
             // 
@@ -108,15 +110,41 @@
             this.lblResult2.Name = "lblResult2";
             this.lblResult2.Size = new System.Drawing.Size(554, 50);
             this.lblResult2.TabIndex = 6;
-            this.lblResult2.Text = "Rock, Paper, Scissors! by NSFian";
             this.lblResult2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblResult2.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // lblWins
+            // 
+            this.lblWins.Font = new System.Drawing.Font("Verdana", 18F);
+            this.lblWins.ForeColor = System.Drawing.Color.Lime;
+            this.lblWins.Location = new System.Drawing.Point(572, 12);
+            this.lblWins.Name = "lblWins";
+            this.lblWins.Size = new System.Drawing.Size(94, 50);
+            this.lblWins.TabIndex = 7;
+            this.lblWins.Text = "0";
+            this.lblWins.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblWins.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // lblLosses
+            // 
+            this.lblLosses.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLosses.ForeColor = System.Drawing.Color.Red;
+            this.lblLosses.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lblLosses.Location = new System.Drawing.Point(678, 12);
+            this.lblLosses.Name = "lblLosses";
+            this.lblLosses.Size = new System.Drawing.Size(94, 50);
+            this.lblLosses.TabIndex = 8;
+            this.lblLosses.Text = "0";
+            this.lblLosses.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblLosses.Click += new System.EventHandler(this.label2_Click);
             // 
             // Window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.lblLosses);
+            this.Controls.Add(this.lblWins);
             this.Controls.Add(this.lblResult2);
             this.Controls.Add(this.lblResult1);
             this.Controls.Add(this.btnScissors);
@@ -140,6 +168,8 @@
         private System.Windows.Forms.Button btnScissors;
         private System.Windows.Forms.Label lblResult1;
         private System.Windows.Forms.Label lblResult2;
+        private System.Windows.Forms.Label lblWins;
+        private System.Windows.Forms.Label lblLosses;
     }
 }
 
